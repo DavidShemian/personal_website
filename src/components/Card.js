@@ -1,9 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
 import CenteredContainer from './CenteredContainer';
+import BasicText from './BasicText';
 
-const Card = ({ src, title, dates, description }) => (
-    <Container>
+const Card = ({ src, title, dates, text }) => (
+    <CenteredContainer  marginTop={'25px'}>
         <SquaredImage src={src} />
         <Title>
             {title}
@@ -11,10 +12,10 @@ const Card = ({ src, title, dates, description }) => (
         <Dates>
             {dates}
         </Dates>
-        <Description>
-            {description}
-        </Description>
-    </Container>
+        <BasicText>
+            {text}
+        </BasicText>
+    </CenteredContainer>
 );
 
 const SquaredImage = styled.img`
@@ -27,20 +28,11 @@ const Dates = styled.span`
     font-size: 18px;
 `;
 
-const Container = styled(CenteredContainer)`
-    margin-top: 25px;
-    flex-direction: column;
-    align-items: center;
-`;
-
 const Title = styled.span`
     font-style: italic;
     text-decoration: underline;
     font-size: 24px;
 `;
 
-const Description = styled.div`
-  white-space: pre-wrap;
-  `;
 
 export default Card;

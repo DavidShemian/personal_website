@@ -1,17 +1,17 @@
 import React from 'react';
 import styled from 'styled-components';
-import { BasicText } from '../components/BasicText';
+import { BasicTitle } from '../components/BasicTitle';
 
 const Welcome = () => {
-    return <Container>
-        <BasicText>
-            <HelloDiv>
+    return <Container id={'Welcome'}>
+        <BasicTitle color={'#FFFF'}>
+            <HelloDiv >
                 Hey, I'm David Shemian
             </HelloDiv>
             <SecondLine>
                 Full stack developer from Israel
             </SecondLine>
-        </BasicText>
+        </BasicTitle>
     </Container>
 }
 

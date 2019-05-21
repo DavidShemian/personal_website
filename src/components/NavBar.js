@@ -1,83 +1,27 @@
 import React, { Component } from "react";
-import { Link, animateScroll as scroll } from "react-scroll";
 import styled from 'styled-components';
+import NavBarLink from "./NavBarLink";
+import resume from '../files/resume.pdf'
+import BasicText from "./BasicText";
 export default class Navbar extends Component {
-  scrollToTop = () => {
-    scroll.scrollToTop();
-  };
 
   render() {
     return (
       <NavContainer>
         <NavContent>
-          {/* <img
-            className="nav-logo"
-            alt="Logo"
-            onClick={this.scrollToTop}
-          /> */}
-          <NavList>
-            <NavListItem>
-              <Link
-                activeClass="active"
-                to="Welcome"
-                spy={true}
-                smooth={true}
-                offset={-70}
-                duration={500}
-              >
-                Welcome
-              </Link>
-            </NavListItem>
-            <NavListItem>
-              <Link
-                activeClass="active"
-                to="section2"
-                spy={true}
-                smooth={true}
-                offset={-70}
-                duration={500}
-              >
-                Section 2
-              </Link>
-            </NavListItem>
-            <NavListItem>
-              <Link
-                activeClass="active"
-                to="section3"
-                spy={true}
-                smooth={true}
-                offset={-70}
-                duration={500}
-              >
-                Section 3
-              </Link>
-            </NavListItem>
-            <NavListItem>
-              <Link
-                activeClass="active"
-                to="section4"
-                spy={true}
-                smooth={true}
-                offset={-70}
-                duration={500}
-              >
-                Section 4
-              </Link>
-            </NavListItem>
-            <NavListItem>
-              <Link
-                activeClass="active"
-                to="section5"
-                spy={true}
-                smooth={true}
-                offset={-70}
-                duration={500}
-              >
-                Section 5
-              </Link>
-            </NavListItem>
-          </NavList>
+          <NavBarLink to="Welcome" label={'Welcome'} />
+          <NavBarLink to="PastWork" label={'Experience'} />
+          <NavBarLink to="Abilities" label={'What I know to do'} />
+          <NavBarLink to="AboutMySelf" label={'About my self'} />
+          <NavBarLink to="ContactInfo" label={'Contact me'} />
         </NavContent>
+        <DownloadResumeDiv>
+          <PDFDownload href={resume} download={'David Shemain resume'} >
+            <BasicText fontStyle={'italic'}>
+              Resume
+              </BasicText>
+          </PDFDownload>
+        </DownloadResumeDiv>
       </NavContainer>
     );
   }
@@ -88,35 +32,24 @@ const NavContainer = styled.nav`
   position: sticky;
   top: 0px;
   height: 50px;
-  /* box-shadow: 0 4px 14px 0 rgba(0, 0, 0, 0.15); */
+  box-shadow: 0 4px 14px 0 rgba(0, 0, 0, 0.15);
   display: flex;
-  flex-direction: row;
-  justify-content: center; 
-  background-color: pink;
 `;
 
 const NavContent = styled.div`
-  /* max-width: 900px; */
-  /* padding: 0rem 3rem; */
-  /* margin: 0 auto; */
-  /* justify-content: flex-start; */
-  /* height: 100%; */
+  width: 50%;
   display: flex;
   flex-direction: row;
-  justify-content: flex-start;
-  background-color: blue;
+  justify-content: space-between;
+  align-items: center;
+  margin: auto;
+  margin-left: 25%;
 `;
 
-const NavList = styled.ul`
-  display: inline;
-  margin-left: 2rem;
-  color: #333;
-  background-color: red;
+const PDFDownload = styled.a`
+  text-decoration: none;
 `;
 
-const NavListItem = styled.li`
-  display: inline;
-  margin-left: 2rem;
-  color: #333;
-  background-color: green;
+const DownloadResumeDiv = styled.div`
+  margin: auto;
 `;

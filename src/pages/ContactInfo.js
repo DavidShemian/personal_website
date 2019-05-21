@@ -1,34 +1,31 @@
 import React from 'react';
+import BasicText from '../components/BasicText';
+import CenteredContainer from '../components/CenteredContainer'
+import { BasicTitle } from '../components/BasicTitle'
+import { SECONDARY_WHITE } from '../constants/colors';
+import Logo from '../components/Logo';
 import styled from 'styled-components';
-import { Phone, Email } from '@material-ui/icons';
-import LinkedinIcon from '../images/LinkedinIcon';
 
 const ContactInfo = () => (
-    <Container>
-        How to reach me:
-        <IconDiv>
-            <Phone /> +972543151790
-        </IconDiv>
-        <IconDiv>
-            <Email /> <a href="mailto:DavidShemian18@gmail.com">DavidShemian18@gmail.com</a>
-        </IconDiv>
-        <IconDiv>
-            <LinkedinIcon /> <a href="https://www.linkedin.com/in/david-shemian-191904159/">click me</a>
-        </IconDiv>
-    </Container>
+    <CenteredContainer backgroundColor={SECONDARY_WHITE} id={'ContactInfo'}>
+        <BasicTitle>
+            I would love to hear from you!
+        </BasicTitle>
+        <CenteredContainer marginTop={'10px'}>
+            <BasicText>
+                +972543151790
+        </BasicText>
+            <BasicText>
+                davidshemian18@gmail.com
+        </BasicText>
+            <Link href="https://www.linkedin.com/in/david-shemian-191904159/"  target="_blank">
+            <Logo src={'https://i.ibb.co/bRT1XLn/linkedin-icon-png-4.png'} width={'30px'} hight={'30px'}/>
+            </Link>
+        </CenteredContainer>
+
+    </CenteredContainer>
 );
 
-const Container = styled.div`
-display: flex; 
-flex-direction: row;
-`;
-
-const IconDiv = styled.div`
-display: flex; 
-flex-direction: row;
-justify-content: center;
-align-items: center;
-margin-left: 250px;
-`;
+const Link = styled.a``;
 
 export default ContactInfo;

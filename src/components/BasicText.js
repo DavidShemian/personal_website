@@ -1,7 +1,11 @@
 import styled from 'styled-components';
 
-export const BasicText = styled.span`
-    color: ${props => props.color ? props.color : '#FFFF'};
-    font-family: 'brandon grotesque', 'Raleway';
-    font-size: ${props => props.fontSize ? props.fontSize : '54px'};
-`;
+const BasicText = styled.div`
+  white-space: pre-wrap;
+  font-size: ${props => props.fontSize ? props.fontSize : '20px'};
+  color: ${props => props.color ? props.color : '#000000'};
+  font-style: ${props => props.fontStyle ? props.fontStyle : 'none'};
+  font-family:'brandon grotesque', 'Raleway';
+  `;
+
+export default BasicText;
