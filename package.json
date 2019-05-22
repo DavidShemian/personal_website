@@ -13,10 +13,11 @@
     "styled-components": "^4.1.3"
   },
   "scripts": {
-    "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "prestart": "next build",
+    "start": "next start -p ${PORT}"
   },
   "eslintConfig": {
     "extends": "react-app"
