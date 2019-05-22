@@ -3,6 +3,7 @@ import CenteredContainer from '../components/CenteredContainer';
 import { BasicTitle } from "../components/BasicTitle";
 import styled from 'styled-components';
 import Card from '../components/Card';
+import { RumbleDescription } from '../constants/Texts';
 
 
 const PastWork = () => (
@@ -12,19 +13,14 @@ const PastWork = () => (
         </Text>
         <Card 
         src='http://www.mnews.co.il/upload/1503476102.png'
+        name='Rumble'
         title='Fullstack engineer'
         dates='01.03.2018 - present'
-        text={`
-       worked as a fullstack engineer using node and react
-       worked as a fullstack engineer using node and react
-       worked as a fullstack engineer using node and react
-       worked as a fullstack engineer using node and react
-       worked as a fullstack engineer using node and react
-       worked as a fullstack engineer using node and react
-        `}
+        text={RumbleDescription}
         />
         <Card 
         src='https://upload.wikimedia.org/wikipedia/en/thumb/0/0f/IDC_logo_White.svg/1200px-IDC_logo_White.svg.png'
+        name='IDC'
         title='Computer science student'
         dates='01.11.2017 - 01.09.2019'
         text={`

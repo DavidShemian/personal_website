@@ -14,9 +14,9 @@ export const NavBarLink = ({ to, onClick, label }) => (
             duration={500}
             onClick={onClick}
         >
-        <Text color={'#000000'} fontSize={'20px'}>
-            {label}
-        </Text>
+            <BasicTitle color={'#000000'} fontSize={'20px'} fontStyle={'italic'}>
+                {label}
+            </BasicTitle>
         </Link>
     </Button>
 );
@@ -28,10 +28,6 @@ border: none;
 cursor:pointer;
 overflow: hidden;
 outline:none;
-`;
-
-const Text = styled(BasicTitle)`
-    font-style: italic;
 `;
 
 export default NavBarLink;

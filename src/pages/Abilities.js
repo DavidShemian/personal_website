@@ -4,7 +4,7 @@ import { BasicTitle } from "../components/BasicTitle";
 import styled from 'styled-components';
 import Logo from '../components/Logo';
 import BasicText from '../components/BasicText';
-import { SECONDARY_WHITE } from '../constants/colors';
+import { SECONDARY_WHITE } from '../constants/Colors';
 
 
 const Abilities = () => (

@@ -2,7 +2,7 @@ import React from 'react';
 import BasicText from '../components/BasicText';
 import CenteredContainer from '../components/CenteredContainer'
 import { BasicTitle } from '../components/BasicTitle'
-import { SECONDARY_WHITE } from '../constants/colors';
+import { SECONDARY_WHITE } from '../constants/Colors';
 import Logo from '../components/Logo';
 import styled from 'styled-components';
 
