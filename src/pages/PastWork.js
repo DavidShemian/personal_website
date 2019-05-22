@@ -9,7 +9,7 @@ import { RumbleDescription } from '../constants/Texts';
 const PastWork = () => (
     <Container id={'PastWork'}>
         <Text color='#000000'>
-            What I've been up to
+            What I've been up to so far
         </Text>
         <Card 
         src='http://www.mnews.co.il/upload/1503476102.png'
