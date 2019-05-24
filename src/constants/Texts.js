@@ -13,4 +13,21 @@ export const RumbleDescription  = `
     Since Rumble is still a small company, you have to be very independent in it. 
     I feel that this helped me learn how to learn new thing in an efficient, quick way.
     For example, When I first started working for Rumble, as a second year student, I had to learn React by myself, from scratch.
-`
+`; 
+
+export const javaScriptDescription = ` Javascript - Highly skilled. Worked with javascript for a year and a half, and always looking  to learn more about the language.
+        Node - Highly skilled. Worked with javascript for a year and a half, and always looking  to learn more about the language.`;
+
+export const aboutMySelfDescription =
+ `Im am amazing!!!
+This is a long text very long 
+Im am amazing!!!
+Im am amazing!!!
+Im am amazing!!!
+Im am amazing!!!
+Im am amazing!!!
+Im am amazing!!!
+Im am amazing!!!`; 
+
+export const contactInfo = ` +972543151790
+davidshemian18@gmail.com`

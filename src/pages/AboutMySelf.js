@@ -1,36 +1,15 @@
 import React from 'react';
 import CenteredContainer from '../components/CenteredContainer';
-import { BasicTitle } from "../components/BasicTitle";
-import styled from 'styled-components';
 import BasicText from '../components/BasicText';
+import { aboutMySelfDescription } from '../constants/Texts';
+import { TITLE_FONT_SIZE } from '../constants/Sizes';
 
 
 const AboutMySelf = () => (
-    <Container id={'AboutMySelf'}>
-        <BasicTitle color='#000000'>
-            Little bit about myself
-        </BasicTitle>
-        <BasicText>
-            {`
-            Im am amazing!!!
-            Im am amazing!!!
-            Im am amazing!!!
-            Im am amazing!!!
-            Im am amazing!!!
-            Im am amazing!!!
-            Im am amazing!!!
-            Im am amazing!!!
-            Im am amazing!!!
-            `}
-        </BasicText>
-    </Container>
+    <CenteredContainer id={'AboutMySelf'}>
+        <BasicText fontSize={TITLE_FONT_SIZE} text={'Little bit about myself'}/>
+        <BasicText text={aboutMySelfDescription} />
+    </CenteredContainer>
 );
-
-const Container = styled(CenteredContainer)`
-    margin-top: 45px;
-    flex-direction: column;
-    align-items: center; 
-`;
-
 
 export default AboutMySelf;

@@ -1,7 +1,7 @@
 import React from "react";
-import { Link } from "react-scroll";
 import styled from 'styled-components';
-import { BasicTitle } from "./BasicTitle";
+import { Link } from "react-scroll";
+import BasicText from "./BasicText";
 
 export const NavBarLink = ({ to, onClick, label }) => (
     <Button>
@@ -14,9 +14,7 @@ export const NavBarLink = ({ to, onClick, label }) => (
             duration={500}
             onClick={onClick}
         >
-            <BasicTitle color={'#000000'} fontSize={'20px'} fontStyle={'italic'}>
-                {label}
-            </BasicTitle>
+            <BasicText text={label} fontStyle={'italic'}/>
         </Link>
     </Button>
 );

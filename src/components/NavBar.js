@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import styled from 'styled-components';
 import NavBarLink from "./NavBarLink";
 import resume from '../files/resume.pdf'
-import { BasicTitle } from "./BasicTitle";
+import BasicText from "./BasicText";
 export default class Navbar extends Component {
 
   render() {
@@ -17,9 +17,7 @@ export default class Navbar extends Component {
         </NavContent>
         <DownloadResumeDiv>
           <PDFDownload href={resume} download={'David Shemain resume'} >
-            <BasicTitle fontSize={'20px'} fontStyle={'italic'}>
-              Resume
-              </BasicTitle>
+            <BasicText text={'Resume'} fontStyle={'italic'}/>
           </PDFDownload>
         </DownloadResumeDiv>
       </NavContainer>
@@ -38,6 +36,7 @@ const NavContainer = styled.nav`
   @media (max-width: 800px) {
   display: none;
   }
+  z-index:100;
 `;
 
 const NavContent = styled.div`

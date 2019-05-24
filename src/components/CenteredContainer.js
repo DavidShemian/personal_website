@@ -6,8 +6,9 @@ const CenteredContainer = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: ${props => props.marginTop ? props.marginTop : '45px'};
+    margin-top: ${props => props.marginTop ? props.marginTop : '3vh'};
     background-color: ${props => props.backgroundColor ? props.backgroundColor : '#FFFFF'};
+    width: 100%;
 `; 
 
 

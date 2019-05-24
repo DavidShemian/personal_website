@@ -1,53 +1,47 @@
 import React from 'react';
 import styled from 'styled-components';
-import video from '../videos/Typing-on-Keyboard-of-MacBook-Pro.mp4'
+import video from '../videos/Productive-Morning.mp4'
 import BasicText from '../components/BasicText';
+import { TITLE_FONT_SIZE } from '../constants/Sizes';
 
 
 
 const Welcome = () => {
-    return <Container id={'Welcome'}>
-        <Text>
-            {`Hey, I'm David Shemian
-                Full stack developer from Israel`}
+    return <Container id={'Welcome'} backgroundColor={'green'}>
+        <Text fontSize={TITLE_FONT_SIZE}
+            text={`Hey, I'm David Shemian
+            Full stack developer from Israel`}
+        >
         </Text>
-        <VideoContainer>
-            <Video autoPlay>
+            <Video autoPlay loop>
                 <Source src={video} type="video/mp4" />
             </Video>
-        </VideoContainer>
     </Container>
 }
 
-const innerHeight = window.innerHeight + 'px';
-
 const Container = styled.div`
-        /* background-image: url(https://images.pexels.com/photos/1509534/pexels-photo-1509534.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260); */
-        height: ${innerHeight}; 
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: row;
-        overflow:hidden;    
-        position:relative;
-        /* background-color: green; */
-        `;
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+`;
 
-const Video = styled.video``;
+const Video = styled.video`
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;  
+    position: absolute; 
+`;
 const Source = styled.source``;
 
 const Text = styled(BasicText)`
-    top:0;  
-    left:0;
-    z-index:100;
-    background-color: blue;
-`;
-
-const VideoContainer = styled.div`
-    /* position:relative;
-    top:0; 
-    left:0; */
-
+text-align: center;
+vertical-align: middle;
+opacity: 0.8;
 `;
 
 export default Welcome;

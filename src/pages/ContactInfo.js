@@ -1,31 +1,19 @@
 import React from 'react';
 import BasicText from '../components/BasicText';
 import CenteredContainer from '../components/CenteredContainer'
-import { BasicTitle } from '../components/BasicTitle'
 import { SECONDARY_WHITE } from '../constants/Colors';
-import Logo from '../components/Logo';
-import styled from 'styled-components';
+import { TITLE_FONT_SIZE } from '../constants/Sizes';
+import { contactInfo } from '../constants/Texts';
+import { LINKEDIN_PROFILE, LINKEDIN_LOGO } from '../constants/URL';
+import LinkedImage from '../components/LinkedImage';
 
 const ContactInfo = () => (
     <CenteredContainer backgroundColor={SECONDARY_WHITE} id={'ContactInfo'}>
-        <BasicTitle>
-            I would love to hear from you!
-        </BasicTitle>
-        <CenteredContainer marginTop={'10px'}>
-            <BasicText>
-                +972543151790
-        </BasicText>
-            <BasicText>
-                davidshemian18@gmail.com
-        </BasicText>
-            <Link href="https://www.linkedin.com/in/david-shemian-191904159/"  target="_blank">
-            <Logo src={'https://i.ibb.co/bRT1XLn/linkedin-icon-png-4.png'} width={'30px'} hight={'30px'}/>
-            </Link>
-        </CenteredContainer>
-
+        <BasicText text={'I would love to hear from you!'} fontSize={TITLE_FONT_SIZE} />
+        <BasicText text={contactInfo} />
+        <LinkedImage href={LINKEDIN_PROFILE} src={LINKEDIN_LOGO} width={'8vh'} hight={'8vh'} />
     </CenteredContainer>
 );
 
-const Link = styled.a``;
 
 export default ContactInfo;

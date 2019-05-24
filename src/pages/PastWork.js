@@ -1,16 +1,14 @@
 import React from 'react';
 import CenteredContainer from '../components/CenteredContainer';
-import { BasicTitle } from "../components/BasicTitle";
-import styled from 'styled-components';
 import Card from '../components/Card';
 import { RumbleDescription } from '../constants/Texts';
+import BasicText from '../components/BasicText';
+import { TITLE_FONT_SIZE } from '../constants/Sizes';
 
 
 const PastWork = () => (
-    <Container id={'PastWork'}>
-        <Text color='#000000'>
-            What I've been up to so far
-        </Text>
+    <CenteredContainer id={'PastWork'}>
+        <BasicText text={`What I've been up to so far`} fontSize={TITLE_FONT_SIZE}/>
         <Card 
         src='http://www.mnews.co.il/upload/1503476102.png'
         name='Rumble'
@@ -32,17 +30,7 @@ const PastWork = () => (
        worked as a fullstack engineer using node and react
         `}
         />
-    </Container>
+    </CenteredContainer>
 );
-
-const Container = styled(CenteredContainer)`
-    margin-top: 45px;
-    flex-direction: column;
-    align-items: center;
-`;
-
-const Text = styled(BasicTitle)`
-    /* text-decoration: underline; */
-`;
 
 export default PastWork;
