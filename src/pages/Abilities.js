@@ -3,8 +3,8 @@ import CenteredContainer from '../components/CenteredContainer';
 import styled from 'styled-components';
 import Logo from '../components/Logo';
 import BasicText from '../components/BasicText';
-import { SECONDARY_WHITE } from '../constants/Colors';
-import { javaScriptDescription } from '../constants/Texts';
+import { SECONDARY_WHITE, MAROON } from '../constants/Colors';
+import { JAVA_SCRIPT_DESCRIPTION, NODE_JS_DESCRIPTION } from '../constants/Texts';
 
 
 const Abilities = () => (
@@ -19,9 +19,17 @@ const Abilities = () => (
             <Logo src={'https://i.ibb.co/yy0wYHF/HTML5.png'} />
             <Logo src={'https://i.ibb.co/QnbqdsR/CSS.png'} />
         </LogoContainer>
-        <BasicText text={javaScriptDescription} />
+        {AbilityDescription('Javascript - ', MAROON, JAVA_SCRIPT_DESCRIPTION)}
+        {AbilityDescription('Node js - ', MAROON, NODE_JS_DESCRIPTION)}
     </CenteredContainer>
-);;
+);
+
+const AbilityDescription = (coloredText, color, text) => (
+    <Text>
+        <BasicText text={coloredText} color={color} fontWeight={"bold"} isP />
+        <BasicText text={text} isP />
+    </Text>
+);
 
 const LogoContainer = styled.div`
     display: flex;
@@ -30,6 +38,12 @@ const LogoContainer = styled.div`
     overflow-x: auto;
     margin-left: 3vw;
     margin-right: 3vw;
+`;
+
+const Text = styled.div`
+    width: 30vw;
+    margin-top: 1vh;
+    height: auto;
 `;
 
 export default Abilities;

@@ -15,11 +15,23 @@ export const RumbleDescription = `
     For example, When I first started working for Rumble, as a second year student, I had to learn React by myself, from scratch.
 `;
 
-export const SMALL_RUMBLE_DESCRIPTION = `Rumble is an app intended to fight the sedentary lifestyle which is so common in the 21 century. I worked at rumble as a full stack developer using Node js and React. My responsibilities varied from creating and maintaining an online tool which its goal was to accessible to database to the non-developers in the company, adding new features to the app, creating from scratch reports from the data of the company, and much more. Since Rumble is still a small company, you have to be very independent in it. I feel that this helped me learn how to learn new thing in an efficient, quick way.For example, When I first started working for Rumble, as a second year student, I had to learn React by myself, from scratch.
+export const SMALL_RUMBLE_DESCRIPTION = `Rumble is an app intended to fight the sedentary lifestyle which is so common in the 21 century. 
+I worked at rumble as a full stack developer using Node js and React. 
+My responsibilities varied from creating and maintaining an online tool which its goal was to accessible to database to the non-developers in the company,
+ adding new features to the app, creating from scratch reports from the data of the company, and much more.
+  Since Rumble is still a small company, you have to be very independent in it. 
+  I feel that this helped me learn how to learn new thing in an efficient, quick way.
+  For example, When I first started working for Rumble, as a second year student, I had to learn React by myself, from scratch.
 `;
 
-export const javaScriptDescription = ` Javascript - Highly skilled. Worked with javascript for a year and a half, and always looking  to learn more about the language.
-        Node - Highly skilled. Worked with javascript for a year and a half, and always looking  to learn more about the language.`;
+export const JAVA_SCRIPT_DESCRIPTION = ` My bread and butter. 
+I have been using Javascript fot the last year and a half, with great enjoyment.
+The reasons that I Love Javascript because are it's versatility and huge supporting community. 
+I am familiar with ES6 and major packages, such as Loadash and Moment.`; 
+
+export const NODE_JS_DESCRIPTION = `Built, maintained and expanded
+a Node js server which runs with express. Familiar with best practices and design patterns in Node, 
+as well as security measurements for the server.`
 
 export const aboutMySelfDescription = `I love the world of programing. 
 And because I love it so much, I learn new things about it every day. 

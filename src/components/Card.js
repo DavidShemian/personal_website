@@ -16,8 +16,6 @@ const Card = ({ src, name, title, dates, text }) => (
     </Container>
 );
 
-const P = styled.p``;
-
 const SquaredImage = styled.img`
     width: 100%;
     max-width: 300px;
