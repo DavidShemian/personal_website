@@ -24,8 +24,8 @@ export const javaScriptDescription = ` Javascript - Highly skilled. Worked with 
 export const aboutMySelfDescription = `I love the world of programing. 
 And because I love it so much, I learn new things about it every day. 
 I believe that the only to stay ahead in the field is to be a self learner. 
-This is way I keep myself knowledge in the latests trends and technologies out there. 
-I find my self a very much of a self learner`;
+This is way I keep myself knowledge in the latests trends and technologies out there.`
 
-export const contactInfo = ` +972543151790
-davidshemian18@gmail.com`
+export const EMAIL = `davidshemian18@gmail.com`
+
+export const PHONE_NUMBER = `+972543151790`

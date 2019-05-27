@@ -9,7 +9,7 @@ const CenteredContainer = styled.div`
     background-color: ${props => props.backgroundColor ? props.backgroundColor : '#FFFFF'};
     width: 100%;
     overflow: hidden;
-    margin-top: 8vh;
+    margin-bottom: 2vh;
 `; 
 
 

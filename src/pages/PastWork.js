@@ -1,7 +1,7 @@
 import React from 'react';
 import CenteredContainer from '../components/CenteredContainer';
 import Card from '../components/Card';
-import { RumbleDescription, SMALL_RUMBLE_DESCRIPTION } from '../constants/Texts';
+import { SMALL_RUMBLE_DESCRIPTION } from '../constants/Texts';
 import BasicText from '../components/BasicText';
 
 
