@@ -18,14 +18,10 @@ const BasicText = ({ text, fontSize, fontStyle, isTitle, color, isP, marginTop, 
   </Container>)
 }
 
-const Container = styled.div`
-display: flex;
-flex-direction: column; 
-justify-content: center;
-align-items: center;
-`;
+const Container = styled.div``;
 
 const Span = styled.span`
+  white-space: pre-line;
   font-size: ${props => props.fontSize ? props.fontSize : props.isTitle ? TITLE_FONT_SIZE : DESCRIPTION_FONT_SIZE};
   color: ${props => props.color ? props.color : '#000000'};
   font-style: ${props => props.fontStyle ? props.fontStyle : 'none'};

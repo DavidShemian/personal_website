@@ -8,10 +8,10 @@ const Card = ({ src, name, title, dates, text }) => (
     <Container>
         <SquaredImage src={src} />
         <TextContainer>
-            <BasicText text={name} />
-            <BasicText text={title} />
-            <BasicText text={dates} fontSize={SUB_TEXT_FONT_SIZE} />
-            <BasicText text={text} isP  />
+            <BasicText text={name}/>
+            <BasicText text={title}/>
+            <BasicText text={dates} fontSize={SUB_TEXT_FONT_SIZE}/>
+            <BasicText text={text} isP/>
         </TextContainer>
     </Container>
 );
@@ -25,7 +25,6 @@ const SquaredImage = styled.img`
 
 const TextContainer = styled.div`
     margin-left: 3vw;
-    background-color: red;
     @media screen and (max-width: 400px){
         margin-top: 2vh;
         margin-left: 0vw;
@@ -34,15 +33,15 @@ const TextContainer = styled.div`
 
 const Container = styled(CenteredContainer)`
         flex-direction: row;
-        justify-content: center; 
+        justify-content: flex-start; 
         align-items: center;
         width: 100%;
-        max-width: 1000px;
+        width: 50vw; 
+        background: blue;
         margin-top: 6vh;
         @media screen and (max-width: 700px){
             flex-direction: column;
         }
 
-        background-color: blue;
 `;
 export default Card;

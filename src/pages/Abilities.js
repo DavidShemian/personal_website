@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import Logo from '../components/Logo';
 import BasicText from '../components/BasicText';
 import { SECONDARY_WHITE, MAROON } from '../constants/Colors';
-import { JAVA_SCRIPT_DESCRIPTION, NODE_JS_DESCRIPTION } from '../constants/Texts';
+import { JAVA_SCRIPT_DESCRIPTION, NODE_JS_DESCRIPTION, REACT_DESCRIPTION } from '../constants/Texts';
 
 
 const Abilities = () => (
@@ -21,6 +21,7 @@ const Abilities = () => (
         </LogoContainer>
         {AbilityDescription('Javascript - ', MAROON, JAVA_SCRIPT_DESCRIPTION)}
         {AbilityDescription('Node js - ', MAROON, NODE_JS_DESCRIPTION)}
+        {AbilityDescription('React - ', MAROON, REACT_DESCRIPTION)}
     </CenteredContainer>
 );
 
