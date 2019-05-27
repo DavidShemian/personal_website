@@ -1,2 +1,2 @@
-export const MAIN_WHITE = '#FFFFF'
+export const MAIN_WHITE = '#FFFFFF'
 export const SECONDARY_WHITE = '#F8F8F8'

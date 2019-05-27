@@ -6,6 +6,8 @@ const Logo = styled.img`
     height: ${props => props.hight ? props.hight : '80px'};
     margin-top: 4vh;
     margin-bottom: 4vh;
+    max-width:100%;
+    height:auto;
 `;
 
 export default Logo;

@@ -1,18 +1,15 @@
 import React from 'react';
 import styled from 'styled-components';
-import video from '../videos/Productive-Morning.mp4'
+import video from '../videos/Cinemagraph of a Coffee.mp4'
 import BasicText from '../components/BasicText';
-import { TITLE_FONT_SIZE } from '../constants/Sizes';
+import { MAIN_WHITE } from '../constants/Colors';
 
 
 
 const Welcome = () => {
-    return <Container id={'Welcome'} backgroundColor={'green'}>
-        <Text fontSize={TITLE_FONT_SIZE}
-            text={`Hey, I'm David Shemian
-            Full stack developer from Israel`}
-        >
-        </Text>
+    return <Container id={'Welcome'}>
+        <BasicText text={`Hey, I'm David Shemian`} fontStyle={'italic'} color={MAIN_WHITE} fontSize={'1.5em'}/>
+        <BasicText text={`Full stack developer from Israel`} color={MAIN_WHITE} isTitle/>
             <Video autoPlay loop>
                 <Source src={video} type="video/mp4" />
             </Video>
@@ -26,6 +23,7 @@ const Container = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
   overflow: hidden;
 `;
 
@@ -37,11 +35,5 @@ const Video = styled.video`
     position: absolute; 
 `;
 const Source = styled.source``;
-
-const Text = styled(BasicText)`
-text-align: center;
-vertical-align: middle;
-opacity: 0.8;
-`;
 
 export default Welcome;

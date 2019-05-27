@@ -4,7 +4,7 @@ import { Link } from "react-scroll";
 import BasicText from "./BasicText";
 
 export const NavBarLink = ({ to, onClick, label }) => (
-    <Button>
+    <Span>
         <Link
             to={to}
             activeClass="active"
@@ -14,18 +14,13 @@ export const NavBarLink = ({ to, onClick, label }) => (
             duration={500}
             onClick={onClick}
         >
-            <BasicText text={label} fontStyle={'italic'}/>
+            <BasicText text={label} fontStyle={'italic'} />
         </Link>
-    </Button>
+    </Span>
 );
 
-const Button = styled.button`
-background-color: Transparent;
-background-repeat:no-repeat;
-border: none;
-cursor:pointer;
-overflow: hidden;
-outline:none;
-`;
+const Span = styled.span`
+    cursor:pointer;
+`
 
 export default NavBarLink;

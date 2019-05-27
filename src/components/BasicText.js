@@ -1,11 +1,16 @@
 import styled from 'styled-components';
 import React from 'react';
-import { DESCRIPTION_FONT_SIZE } from '../constants/Sizes';
+import { DESCRIPTION_FONT_SIZE, TITLE_FONT_SIZE, SCALED_TITLE_FONT_SIZE } from '../constants/Sizes';
 
-const BasicText = ({ text, fontSize, fontStyle }) => {
+const BasicText = ({ text, fontSize, fontStyle, isTitle, color, isP }) => {
+  if(isP){
+    return <Span color={color} fontSize={fontSize} fontStyle={fontStyle}>{text}</Span>
+  }
+  
   const lines = text.split('\n');
   const toRender = lines.map((line, i) => {
-    return <Span fontSize={fontSize} fontStyle={fontStyle} key={i}>{line}</Span>
+    return <Span isTitle={isTitle} color={color} fontSize={fontSize} fontStyle={fontStyle} key={i}>{line}</Span>
+
   });
 
   return (<Container>
@@ -21,10 +26,16 @@ align-items: center;
 `;
 
 const Span = styled.span`
-  font-size: ${props => props.fontSize ? props.fontSize : DESCRIPTION_FONT_SIZE};
+  font-size: ${props => props.isTitle ? TITLE_FONT_SIZE : props.fontSize ? props.fontSize : DESCRIPTION_FONT_SIZE};
   color: ${props => props.color ? props.color : '#000000'};
   font-style: ${props => props.fontStyle ? props.fontStyle : 'none'};
-  font-family:'Playfair Display', 'Roboto', 'brandon grotesque', 'Raleway';
-  `;
+  font-family: ${props => props.isTitle ? 'Playfair Display' : 'Roboto'};
+  @media screen and(max-width: 480px){
+    font-size: ${
+    props => props.isTitle ? SCALED_TITLE_FONT_SIZE :
+    props.fontSize ? props.fontSize : DESCRIPTION_FONT_SIZE
+  };
+}
+`;
 
 export default BasicText;
