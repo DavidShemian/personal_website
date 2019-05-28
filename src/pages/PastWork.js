@@ -7,7 +7,7 @@ import BasicText from '../components/BasicText';
 
 const PastWork = () => (
     <CenteredContainer id={'PastWork'}>
-        <BasicText text={`What I've been up to so far`} isTitle/>
+        <BasicText text={`What I've been up to`} isTitle/>
         <Card 
         src='http://www.mnews.co.il/upload/1503476102.png'
         name='Rumble'

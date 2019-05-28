@@ -40,6 +40,7 @@ const LogoContainer = styled.div`
     overflow-x: auto;
     margin-left: 3vw;
     margin-right: 3vw;
+    margin-top: 2vh;
 `;
 
 export default Abilities;

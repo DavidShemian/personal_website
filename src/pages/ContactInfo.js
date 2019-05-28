@@ -9,7 +9,8 @@ import { MARGIN_FROM_TEXT_TO_TITLE_SIZE } from '../constants/Sizes';
 
 const ContactInfo = () => (
     <CenteredContainer backgroundColor={SECONDARY_WHITE} id={'ContactInfo'}>
-        <BasicText text={'I would love to hear from you!'} isTitle={true} />
+        <BasicText text={`I would love to hear`} isTitle={true} />
+        <BasicText text={`from you!`} isTitle={true} />
             <CenteredContainer marginTop={MARGIN_FROM_TEXT_TO_TITLE_SIZE}>
             <BasicText text={PHONE_NUMBER} />
             <BasicText text={EMAIL} />
