@@ -8,8 +8,10 @@ const CenteredContainer = styled.div`
     align-items: center;
     background-color: ${props => props.backgroundColor ? props.backgroundColor : '#FFFFF'};
     width: 100%;
+    min-width: 300px;
     overflow: hidden;
     margin-bottom: 2vh;
+    margin-top: ${props => props.marginTop};
 `; 
 
 

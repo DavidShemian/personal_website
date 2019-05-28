@@ -5,6 +5,7 @@ import Logo from '../components/Logo';
 import BasicText from '../components/BasicText';
 import { SECONDARY_WHITE, MAROON } from '../constants/Colors';
 import { JAVA_SCRIPT_DESCRIPTION, NODE_JS_DESCRIPTION, REACT_DESCRIPTION } from '../constants/Texts';
+import TextContainer from '../components/TextContainer';
 
 
 const Abilities = () => (
@@ -26,10 +27,10 @@ const Abilities = () => (
 );
 
 const AbilityDescription = (coloredText, color, text) => (
-    <Text>
+    <TextContainer>
         <BasicText text={coloredText} color={color} fontWeight={"bold"} isP />
         <BasicText text={text} isP />
-    </Text>
+    </TextContainer>
 );
 
 const LogoContainer = styled.div`
@@ -39,12 +40,6 @@ const LogoContainer = styled.div`
     overflow-x: auto;
     margin-left: 3vw;
     margin-right: 3vw;
-`;
-
-const Text = styled.div`
-    width: 30vw;
-    margin-top: 1vh;
-    height: auto;
 `;
 
 export default Abilities;

@@ -6,7 +6,9 @@ import { SUB_TEXT_FONT_SIZE } from '../constants/Sizes';
 
 const Card = ({ src, name, title, dates, text }) => (
     <Container>
+        <ImageContainer>
         <SquaredImage src={src} />
+        </ImageContainer>
         <TextContainer>
             <BasicText text={name}/>
             <BasicText text={title}/>
@@ -16,15 +18,21 @@ const Card = ({ src, name, title, dates, text }) => (
     </Container>
 );
 
+const ImageContainer = styled.div`
+    background: red;
+`
+
 const SquaredImage = styled.img`
     width: 100%;
-    max-width: 300px;
+    min-width: 300px;
+    max-height: 220px;
     height: auto;
     border-radius: 3vh;
 `;
 
 const TextContainer = styled.div`
     margin-left: 3vw;
+    background: green;
     @media screen and (max-width: 400px){
         margin-top: 2vh;
         margin-left: 0vw;
@@ -36,10 +44,11 @@ const Container = styled(CenteredContainer)`
         justify-content: flex-start; 
         align-items: center;
         width: 100%;
+        min-width: 300px;
         width: 50vw; 
         background: blue;
         margin-top: 6vh;
-        @media screen and (max-width: 700px){
+        @media screen and (max-width: 1400px){
             flex-direction: column;
         }
 
