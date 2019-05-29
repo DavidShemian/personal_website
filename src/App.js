@@ -5,10 +5,12 @@ import Navbar from './components/NavBar';
 import AboutMySelf from './pages/AboutMySelf';
 import Abilities from './pages/Abilities';
 import ContactInfo from './pages/ContactInfo';
+import MobileMenu from './components/MobileMenu';
 
 function App() {
   return (
     <div>
+      {/* <MobileMenu /> */}
       <Navbar />
       <Welcome />
       <PastWork />
