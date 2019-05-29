@@ -10,8 +10,8 @@ import MobileMenu from './components/MobileMenu';
 function App() {
   return (
     <div>
-      {/* <MobileMenu /> */}
-      <Navbar />
+      {/* <Navbar /> */}
+      <MobileMenu />
       <Welcome />
       <PastWork />
       <Abilities />

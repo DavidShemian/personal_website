@@ -1,60 +1,98 @@
 import React, { Component } from 'react';
 import styled, { keyframes, css } from 'styled-components';
-import CenteredContainer from './CenteredContainer';
 import NavBarLink from "./NavBarLink";
-import Logo from './Logo';
+import { MENU_BACKGROUND, MAROON } from '../constants/Colors';
 
 class MobileMenu extends Component {
     state = {
-        showMenu: false
+        showX: false
     };
-
-    onClickMenu = () => {
-        console.log("123123");
+    showHideX = () => {
         this.setState({
-            showMenu: !this.state.showMenu
-        })
+            showX: !this.state.showX
+        });
     }
 
     render() {
-        const { showMenu } = this.state;
+        const { showX } = this.state;
 
-        return (<MenuContainer>
-            <Button onClick={this.onClickMenu}>
-                <Logo width={'30px'} height={'30px'} src={'https://i.ibb.co/n3MZ7T4/burger-menu-transperent.png'} />
-            </Button>
-            <Container showMenu={showMenu}>
-                <NavBarLink to="Welcome" label={'Welcome'} />
-                <NavBarLink to="PastWork" label={'Experience'} />
-                <NavBarLink to="Abilities" label={'Abilities'} />
-                <NavBarLink to="AboutMySelf" label={'About me'} />
-                <NavBarLink to="ContactInfo" label={'Contact me'} />
-            </Container>
-        </MenuContainer>)
+        return (
+            <MenuContainer>
+                <MenuButtonContainer onClick={this.showHideX}>
+                    <Bar1 showX={showX} />
+                    <Bar2 showX={showX} />
+                    <Bar3 showX={showX} />
+                </MenuButtonContainer>
+                <Container showX={showX}>
+                    <NavBarLink to="Welcome" label={'Welcome'} margin={'30px'} />
+                    <NavBarLink to="PastWork" label={'Experience'} margin={'30px'} />
+                    <NavBarLink to="Abilities" label={'Abilities'} margin={'30px'} />
+                    <NavBarLink to="AboutMySelf" label={'About me'} margin={'30px'} />
+                    <NavBarLink to="ContactInfo" label={'Contact me'} margin={'30px'} />
+                </Container>
+            </MenuContainer>
+        )
+
     }
 }
 
-const MenuContainer = styled(CenteredContainer)`
-    /* position: sticky; */
-    /* top: 0px; */
-    /* z-index: -1; */
-    /* background-color: red; */
+const MenuContainer = styled.div`
+    position: absolute; 
+    top: 0px;
 `;
 
-const Button = styled.button`
-    border:0; 
-    background: transparent;
+const MenuButtonContainer = styled.div`
+    display: inline-block;
+    cursor: pointer;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    z-index: 1000;
+    position: absolute; 
+`;
+
+const Bar = styled.div`
+    width: 35px;
+    height: 5px;
+    background-color: ${MAROON};
+    margin: 6px 0;
+    transition: 0.4s;
+`;
+
+const Bar1 = styled(Bar)`
+    ${props => props.showX ? changeBar1 : null};
+`;
+
+const Bar2 = styled(Bar)`
+    ${props => props.showX ? changeBar2 : null};
+`;
+
+const Bar3 = styled(Bar)`
+    ${props => props.showX ? changeBar3 : null};
+`;
+
+
+const changeBar1 = css`
+    -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+    transform: rotate(-45deg) translate(-9px, 6px);
+`;
+
+const changeBar2 = css`
+    opacity: 0;
+`;
+
+const changeBar3 = css`
+    -webkit-transform: rotate(45deg) translate(-8px, -8px);
+    transform: rotate(45deg) translate(-8px, -8px);
 `;
 
 const slideIn = keyframes`
   0% {
-    display:flex;
+    opacity: 0;
     transform: translateY(-100%);
   }
   100% {
     transform: translateY(0);
     opacity: 1;
-    display:flex;
   }
 `;
 
@@ -77,16 +115,16 @@ const animationOut = css`
 `
 
 const Container = styled.span`
-    background: red;
     display: flex; 
-    visibility: ${props => props.showMenu ? 'visible' : 'hidden'}; 
+    position:relative;
+    visibility: ${props => props.showX ? 'visable' : 'hidden'}; 
     transition: visibility 1s linear;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between;
-    height: 200px;
-    width: 100px;
-    ${props => props.showMenu ? animationIn : animationOut};  
+    height: 100vh;
+    width: 100vw;
+    background-color: ${MENU_BACKGROUND};
+    ${props => props.showX ? animationIn : animationOut};  
 `;
 
 

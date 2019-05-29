@@ -3,8 +3,8 @@ import styled from 'styled-components';
 import { Link } from "react-scroll";
 import BasicText from "./BasicText";
 
-export const NavBarLink = ({ to, onClick, label }) => (
-    <Span>
+export const NavBarLink = ({ to, onClick, label, margin }) => (
+    <Span margin={margin}>
         <Link
             to={to}
             activeClass="active"
@@ -21,6 +21,7 @@ export const NavBarLink = ({ to, onClick, label }) => (
 
 const Span = styled.span`
     cursor:pointer;
-`
+    margin: ${props => props.margin ? props.margin : 'none'};
+`;
 
 export default NavBarLink;
