@@ -8,7 +8,7 @@ const Welcome = () => {
     return <Container id={'Welcome'}>
         <BasicText text={`Hey, I'm David Shemian`} fontStyle={'italic'} color={MAIN_WHITE} fontSize={'1.5em'} isTitle />
         <BasicText text={`Fullstack developer`} color={MAIN_WHITE} isTitle />
-        <Video autoPlay loop>
+        <Video autoPlay loop muted>
             <Source src={video} type="video/mp4" />
         </Video>
     </Container>
