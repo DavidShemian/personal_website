@@ -1,14 +1,14 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const StyledSpan = ({children, marginTop}) => {
-    return (<Span marginTop={marginTop}>
+const StyledSpan = ({children, margin}) => {
+    return (<Span margin={margin}>
         {children}
     </Span>)
 };
 
 const Span = styled.span`
-    margin-top: ${props => props.marginTop};
+    margin: ${props => props.margin};
 `
 
 export default StyledSpan

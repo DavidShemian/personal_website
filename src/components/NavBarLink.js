@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { Link } from "react-scroll";
 import BasicText from "./BasicText";
 
-export const NavBarLink = ({ to, onClick, label, margin }) => (
+export const NavBarLink = ({ to, onClick, label, margin}) => (
     <Span margin={margin}>
         <Link
             to={to}

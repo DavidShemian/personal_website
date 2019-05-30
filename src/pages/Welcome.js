@@ -3,14 +3,11 @@ import styled from 'styled-components';
 import video from '../videos/Cinemagraph of a Coffee.mp4'
 import BasicText from '../components/BasicText';
 import { MAIN_WHITE } from '../constants/Colors';
-import Logo from '../components/Logo';
-
-
 
 const Welcome = () => {
     return <Container id={'Welcome'}>
         <BasicText text={`Hey, I'm David Shemian`} fontStyle={'italic'} color={MAIN_WHITE} fontSize={'1.5em'} isTitle />
-        <BasicText text={`Full stack developer`} color={MAIN_WHITE} isTitle />
+        <BasicText text={`Fullstack developer`} color={MAIN_WHITE} isTitle />
         <Video autoPlay loop>
             <Source src={video} type="video/mp4" />
         </Video>

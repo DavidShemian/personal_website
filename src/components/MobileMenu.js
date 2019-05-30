@@ -1,17 +1,34 @@
 import React, { Component } from 'react';
 import styled, { keyframes, css } from 'styled-components';
 import NavBarLink from "./NavBarLink";
-import { MENU_BACKGROUND, MAROON } from '../constants/Colors';
+import StyledSpan from "./StyledSpan";
+import { MAIN_WHITE, BLACK } from '../constants/Colors';
+import DownloadResume from '../constants/Components';
 
 class MobileMenu extends Component {
     state = {
         showX: false
     };
     showHideX = () => {
+        const { showX } = this.state;
         this.setState({
-            showX: !this.state.showX
+            showX: !showX
         });
+        if (!showX) {
+            document.body.style.overflow = "hidden"
+        } else {
+            document.body.style.overflow = "visible"
+        }
     }
+
+    SpacedNavBarLink = ({ to, label, isDownload }) => {
+        return (
+            <StyledSpan margin={'3vh 0 0 0'}>
+                {isDownload ? <DownloadResume/>
+                    : <NavBarLink to={to} label={label} onClick={this.showHideX} />}
+            </StyledSpan>
+        );
+    };
 
     render() {
         const { showX } = this.state;
@@ -24,11 +41,12 @@ class MobileMenu extends Component {
                     <Bar3 showX={showX} />
                 </MenuButtonContainer>
                 <Container showX={showX}>
-                    <NavBarLink to="Welcome" label={'Welcome'} margin={'30px'} />
-                    <NavBarLink to="PastWork" label={'Experience'} margin={'30px'} />
-                    <NavBarLink to="Abilities" label={'Abilities'} margin={'30px'} />
-                    <NavBarLink to="AboutMySelf" label={'About me'} margin={'30px'} />
-                    <NavBarLink to="ContactInfo" label={'Contact me'} margin={'30px'} />
+                    <this.SpacedNavBarLink to="Welcome" label={'Welcome'} />
+                    <this.SpacedNavBarLink to="PastWork" label={'Experience'} />
+                    <this.SpacedNavBarLink to="Abilities" label={'Abilities'} />
+                    <this.SpacedNavBarLink to="AboutMySelf" label={'About me'} />
+                    <this.SpacedNavBarLink to="ContactInfo" label={'Contact me'} />
+                    <this.SpacedNavBarLink isDownload />
                 </Container>
             </MenuContainer>
         )
@@ -36,27 +54,36 @@ class MobileMenu extends Component {
     }
 }
 
+
+const ANIMATION_TIME = '0.7s';
+
 const MenuContainer = styled.div`
     position: absolute; 
     top: 0px;
+    @media (min-width: 700px) {
+    display: none;
+    }
 `;
 
 const MenuButtonContainer = styled.div`
     display: inline-block;
     cursor: pointer;
-    margin-left: 10px;
-    margin-bottom: 10px;
-    z-index: 1000;
+    margin-left: 20px;
+    margin-top: 15px;
+    z-index: 10;
     position: absolute; 
+    
 `;
 
 const Bar = styled.div`
-    width: 35px;
-    height: 5px;
-    background-color: ${MAROON};
+    width: 25px;
+    height: 3px;
+    background-color: ${props => props.showX ? BLACK : MAIN_WHITE};
+    transition: background-color ${ANIMATION_TIME} linear;
     margin: 6px 0;
     transition: 0.4s;
 `;
+
 
 const Bar1 = styled(Bar)`
     ${props => props.showX ? changeBar1 : null};
@@ -72,8 +99,8 @@ const Bar3 = styled(Bar)`
 
 
 const changeBar1 = css`
-    -webkit-transform: rotate(-45deg) translate(-9px, 6px);
-    transform: rotate(-45deg) translate(-9px, 6px);
+    -webkit-transform: rotate(-45deg) translate(-5px, 6px);
+    transform: rotate(-45deg) translate(-5px, 6px);
 `;
 
 const changeBar2 = css`
@@ -81,14 +108,14 @@ const changeBar2 = css`
 `;
 
 const changeBar3 = css`
-    -webkit-transform: rotate(45deg) translate(-8px, -8px);
-    transform: rotate(45deg) translate(-8px, -8px);
+    -webkit-transform: rotate(45deg) translate(-7px, -8px);
+    transform: rotate(45deg) translate(-7px, -8px);
 `;
 
 const slideIn = keyframes`
   0% {
-    opacity: 0;
     transform: translateY(-100%);
+    opacity: 0;
   }
   100% {
     transform: translateY(0);
@@ -108,23 +135,28 @@ const slideOut = keyframes`
 `;
 
 const animationIn = css`
-    animation: ${slideIn} 1s ease-in-out 0s;
+    animation: ${slideIn};
+    animation-duration: ${ANIMATION_TIME};
 `;
 const animationOut = css`
-    animation: ${slideOut} 1s ease-in-out 0s;
+    animation: ${slideOut};
+    animation-duration: ${ANIMATION_TIME};
 `
 
 const Container = styled.span`
     display: flex; 
-    position:relative;
-    visibility: ${props => props.showX ? 'visable' : 'hidden'}; 
-    transition: visibility 1s linear;
     flex-direction: column;
     align-items: center;
-    height: 100vh;
+    position:relative;
+    visibility: 'visable'; 
+    visibility: ${props => props.showX ? 'visable' : 'hidden'}; 
+    z-index: ${props => props.showX ? 1 : 0}; 
+    transition: visibility ${ANIMATION_TIME} linear, z-index ${ANIMATION_TIME} linear;
+    height: 40vh;
     width: 100vw;
-    background-color: ${MENU_BACKGROUND};
-    ${props => props.showX ? animationIn : animationOut};  
+    background-color: ${MAIN_WHITE};
+    /* background-image: linear-gradient(#000000, #434343); */
+    ${props => props.showX ? animationIn : animationOut};
 `;
 
 

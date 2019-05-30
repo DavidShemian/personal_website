@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import styled from 'styled-components';
 import NavBarLink from "./NavBarLink";
-import resume from '../files/resume.pdf'
-import BasicText from "./BasicText";
+import DownloadResume from "../constants/Components";
+
 export default class Navbar extends Component {
 
   render() {
@@ -16,9 +16,7 @@ export default class Navbar extends Component {
           <NavBarLink to="ContactInfo" label={'Contact me'} />
         </NavContent>
         <DownloadResumeDiv>
-          <PDFDownload href={resume} download={'David Shemain resume'} >
-            <BasicText text={'Resume'} fontStyle={'italic'} />
-          </PDFDownload>
+          <DownloadResume />
         </DownloadResumeDiv>
       </NavContainer>
     );
@@ -33,11 +31,11 @@ const NavContainer = styled.nav`
   box-shadow: 0 4px 14px 0 rgba(0, 0, 0, 0.15);
   display: flex;
   flex-shrink: 0;
+  z-index:100;
+  overflow: hidden;
   @media (max-width: 700px) {
   display: none;
   }
-  z-index:100;
-  overflow: hidden;
 `;
 
 const NavContent = styled.div`
@@ -49,10 +47,6 @@ const NavContent = styled.div`
   flex-grow: 0.2;
   margin: auto;
   margin-left: 20%;
-`;
-
-const PDFDownload = styled.a`
-  text-decoration: none;
 `;
 
 const DownloadResumeDiv = styled.div`
