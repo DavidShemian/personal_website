@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import styled, { keyframes, css } from 'styled-components';
 import NavBarLink from "./NavBarLink";
 import StyledSpan from "./StyledSpan";
-import { MAIN_WHITE, BLACK } from '../constants/Colors';
+import { MAIN_WHITE, GREY_SHADE, BLACK } from '../constants/Colors';
 import DownloadResume from '../constants/Components';
 
 class MobileMenu extends Component {
@@ -48,12 +48,27 @@ class MobileMenu extends Component {
                     <this.SpacedNavBarLink to="ContactInfo" label={'Contact me'} />
                     <this.SpacedNavBarLink isDownload />
                 </Container>
+                <ShadeDiv showX={showX}/>
             </MenuContainer>
         )
 
     }
 }
 
+
+const ShadeDiv = styled.div`
+  position: fixed;
+  display: ${props => props.showX ? 'block' : 'none'};
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.5);
+  z-index: 2;
+  cursor: pointer;
+`;
 
 const ANIMATION_TIME = '0.7s';
 
@@ -71,14 +86,14 @@ const MenuButtonContainer = styled.div`
     margin-left: 20px;
     margin-top: 15px;
     z-index: 10;
-    position: absolute; 
+    position: fixed; 
     
 `;
 
 const Bar = styled.div`
     width: 25px;
     height: 3px;
-    background-color: ${props => props.showX ? BLACK : MAIN_WHITE};
+    background-color: ${props => props.showX ? BLACK : GREY_SHADE};
     transition: background-color ${ANIMATION_TIME} linear;
     margin: 6px 0;
     transition: 0.4s;
@@ -147,15 +162,15 @@ const Container = styled.span`
     display: flex; 
     flex-direction: column;
     align-items: center;
-    position:relative;
+    position:fixed;
     visibility: 'visable'; 
     visibility: ${props => props.showX ? 'visable' : 'hidden'}; 
     z-index: ${props => props.showX ? 1 : 0}; 
     transition: visibility ${ANIMATION_TIME} linear, z-index ${ANIMATION_TIME} linear;
     height: 40vh;
     width: 100vw;
+    z-index: 9;
     background-color: ${MAIN_WHITE};
-    /* background-image: linear-gradient(#000000, #434343); */
     ${props => props.showX ? animationIn : animationOut};
 `;
 
