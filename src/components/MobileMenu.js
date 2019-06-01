@@ -16,8 +16,10 @@ class MobileMenu extends Component {
         });
         if (!showX) {
             document.body.style.overflow = "hidden"
+            document.body.style.position = "relative"
         } else {
             document.body.style.overflow = "visible"
+            document.body.style.position = "static"
         }
     }
 
