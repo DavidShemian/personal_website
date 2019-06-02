@@ -39,9 +39,10 @@ const Container = styled(CenteredContainer)`
         align-items: center;
         width: 100%;
         min-width: 300px;
-        width: 50vw; 
+        width: 60vw; 
         margin-top: 6vh;
-        @media screen and (max-width: 1400px){
+        /* background: red; */
+        @media screen and (max-width: 1000px){
             flex-direction: column;
         }
 
