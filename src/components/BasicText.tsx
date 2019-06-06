@@ -1,8 +1,24 @@
+
 import styled from 'styled-components';
 import React from 'react';
 import { DESCRIPTION_FONT_SIZE, TITLE_FONT_SIZE, SCALED_TITLE_FONT_SIZE } from '../constants/Sizes';
 
-const BasicText = ({ text, fontSize, fontStyle, isTitle, color, isP, marginTop, fontWeight }) => {
+interface ITextProps {
+  fontSize?: string,
+  fontStyle?: string,
+  isTitle?: string,
+  color?: string,
+  isP?: boolean,
+  marginTop?: string,
+  fontWeight?: string
+}; 
+
+interface IBasicText extends ITextProps {
+  text: string
+};
+
+
+const BasicText = ({ text, fontSize, fontStyle, isTitle, color, isP, marginTop, fontWeight }: IBasicText) => {
   if (isP) {
     return <Span color={color} fontSize={fontSize} fontWeight={fontWeight} fontStyle={fontStyle}>{text}</Span>
   }
@@ -20,7 +36,7 @@ const BasicText = ({ text, fontSize, fontStyle, isTitle, color, isP, marginTop, 
 
 const Container = styled.div``;
 
-const Span = styled.span`
+const Span = styled.span<ITextProps>`
   white-space: pre-line;
   font-size: ${props => props.fontSize ? props.fontSize : props.isTitle ? TITLE_FONT_SIZE : DESCRIPTION_FONT_SIZE};
   color: ${props => props.color ? props.color : '#000000'};

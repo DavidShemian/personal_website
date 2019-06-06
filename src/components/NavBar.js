@@ -4,7 +4,6 @@ import NavBarLink from "./NavBarLink";
 import DownloadResume from "../constants/Components";
 
 export default class Navbar extends Component {
-
   render() {
     return (
       <NavContainer>
