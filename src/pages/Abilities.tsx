@@ -20,17 +20,22 @@ const Abilities = () => (
             <Logo src={'https://i.ibb.co/yy0wYHF/HTML5.png'} />
             <Logo src={'https://i.ibb.co/QnbqdsR/CSS.png'} />
         </LogoContainer>
-        {AbilityDescription('Javascript - ', MAROON, JAVA_SCRIPT_DESCRIPTION)}
-        {AbilityDescription('Node js - ', MAROON, NODE_JS_DESCRIPTION)}
-        {AbilityDescription('React - ', MAROON, REACT_DESCRIPTION)}
+        <AbilityDescription coloredText='Javascript - ' text={JAVA_SCRIPT_DESCRIPTION} />
+        <AbilityDescription coloredText='Node js - ' text={NODE_JS_DESCRIPTION} />
+        <AbilityDescription coloredText='React - ' text={REACT_DESCRIPTION} />
     </CenteredContainer>
 );
 
-const AbilityDescription = (coloredText, color, text) => (
-    <TextContainer>
-        <BasicText text={coloredText} color={color} fontWeight={"bold"} isP />
+interface IAbilityDescription {
+    coloredText: string,
+    text: string
+}
+
+const AbilityDescription = ({ coloredText, text }: IAbilityDescription) => (
+    (<TextContainer>
+        <BasicText text={coloredText} color={MAROON} fontWeight={"bold"} isP />
         <BasicText text={text} isP />
-    </TextContainer>
+    </TextContainer>)
 );
 
 const LogoContainer = styled.div`

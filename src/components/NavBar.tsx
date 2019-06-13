@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import styled from 'styled-components';
 import NavBarLink from "./NavBarLink";
-import DownloadResume from "../constants/Components";
+import DownloadResume from "../constants/DownloadResume";
 
 export default class Navbar extends Component {
   render() {

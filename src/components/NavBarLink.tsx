@@ -1,9 +1,21 @@
 import React from "react";
 import styled from 'styled-components';
-import { Link } from "react-scroll";
+import { Link } from 'react-scroll';
 import BasicText from "./BasicText";
 
-export const NavBarLink = ({ to, onClick, label, margin}) => (
+interface ISpan {
+    margin?: string
+}
+
+interface INavBarLink extends ISpan {
+    to: string,
+    label: string,
+    onClick?: () => void;
+}
+
+
+
+export const NavBarLink = ({ to, label, margin = 'none', onClick }: INavBarLink) => (
     <Span margin={margin}>
         <Link
             to={to}
@@ -19,9 +31,9 @@ export const NavBarLink = ({ to, onClick, label, margin}) => (
     </Span>
 );
 
-const Span = styled.span`
+const Span = styled.span<ISpan>`
     cursor:pointer;
-    margin: ${props => props.margin ? props.margin : 'none'};
+    margin: ${props => props.margin};
 `;
 
 export default NavBarLink;

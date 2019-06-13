@@ -18,9 +18,9 @@
     "isolatedModules": true,
     "noImplicitAny": true,
     "noEmit": true,
-    "jsx": "preserve"
+    "jsx": "preserve",
   },
   "include": [
     "src"
-  ]
+  ],
 }

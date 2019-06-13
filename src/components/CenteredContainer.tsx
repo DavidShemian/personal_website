@@ -1,7 +1,12 @@
 import styled from 'styled-components';
 
+interface ICenteredContainer {
+    backgroundColor?: string,
+    marginTop?: string
+}
 
-const CenteredContainer = styled.div`
+
+const CenteredContainer = styled.div<ICenteredContainer>`
     display: flex; 
     flex-direction: column;
     justify-content: center;
@@ -12,7 +17,7 @@ const CenteredContainer = styled.div`
     overflow: hidden;
     margin-bottom: 2vh;
     margin-top: ${props => props.marginTop};
-`; 
+`;
 
 
 export default CenteredContainer;

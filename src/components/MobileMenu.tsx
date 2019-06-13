@@ -1,17 +1,33 @@
-import React, { Component } from 'react';
+import React, { Component, ReactNode } from 'react';
 import styled, { keyframes, css } from 'styled-components';
-import NavBarLink from "./NavBarLink";
-import StyledSpan from "./StyledSpan";
 import { MAIN_WHITE, GREY_SHADE, BLACK } from '../constants/Colors';
-import DownloadResume from '../constants/Components';
+import DownloadResume from '../constants/DownloadResume';
+import StyledSpan from './StyledSpan';
+import NavBarLink from './NavBarLink';
 
-class MobileMenu extends Component {
+interface IProps { }
+
+interface ISpacedNavBarLink {
+    to: string,
+    label: string,
+}
+
+interface IReactNode {
+    [name: string]: ReactNode
+}
+
+interface IShowX {
+    showX: boolean | undefined
+}
+
+class MobileMenu extends Component<IProps, IShowX>{
     state = {
         showX: false
     };
-    showHideX = () => {
+
+    showHideX = async () => {
         const { showX } = this.state;
-        this.setState({
+        await this.setState({
             showX: !showX
         });
         if (!showX) {
@@ -23,14 +39,29 @@ class MobileMenu extends Component {
         }
     }
 
-    SpacedNavBarLink = ({ to, label, isDownload }) => {
+    SpacedNavBarLink = ({ to, label }: ISpacedNavBarLink) => {
         return (
-            <StyledSpan margin={'3vh 0 0 0'}>
-                {isDownload ? <DownloadResume/>
-                    : <NavBarLink to={to} label={label} onClick={this.showHideX} />}
-            </StyledSpan>
+            <this.SpacedSpan>
+                <NavBarLink to={to} label={label} onClick={this.showHideX} />
+            </this.SpacedSpan>
         );
     };
+
+    SpacedNavBarDownload = ({ download }: IReactNode) => {
+        return (
+            <this.SpacedSpan>
+                {download}
+            </this.SpacedSpan>
+        )
+    }
+
+    SpacedSpan = ({ children }: IReactNode) => {
+        return (
+            <StyledSpan margin={'4vh 0 0 0'}>
+                {children}
+            </StyledSpan>
+        )
+    }
 
     render() {
         const { showX } = this.state;
@@ -48,17 +79,16 @@ class MobileMenu extends Component {
                     <this.SpacedNavBarLink to="Abilities" label={'Abilities'} />
                     <this.SpacedNavBarLink to="AboutMySelf" label={'About me'} />
                     <this.SpacedNavBarLink to="ContactInfo" label={'Contact me'} />
-                    <this.SpacedNavBarLink isDownload />
+                    <this.SpacedNavBarDownload download={<DownloadResume />} />
                 </Container>
-                <ShadeDiv showX={showX}/>
+                <ShadeDiv showX={showX} />
             </MenuContainer>
         )
-
     }
 }
 
 
-const ShadeDiv = styled.div`
+const ShadeDiv = styled.div<IShowX>`
   position: fixed;
   display: ${props => props.showX ? 'block' : 'none'};
   width: 100%;
@@ -92,7 +122,7 @@ const MenuButtonContainer = styled.div`
     
 `;
 
-const Bar = styled.div`
+const Bar = styled.div<IShowX>`
     width: 25px;
     height: 3px;
     background-color: ${props => props.showX ? BLACK : GREY_SHADE};
@@ -160,7 +190,7 @@ const animationOut = css`
     animation-duration: ${ANIMATION_TIME};
 `
 
-const Container = styled.span`
+const Container = styled.span<IShowX>`
     display: flex; 
     flex-direction: column;
     align-items: center;

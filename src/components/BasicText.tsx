@@ -6,12 +6,12 @@ import { DESCRIPTION_FONT_SIZE, TITLE_FONT_SIZE, SCALED_TITLE_FONT_SIZE } from '
 interface ITextProps {
   fontSize?: string,
   fontStyle?: string,
-  isTitle?: string,
+  isTitle?: boolean,
   color?: string,
   isP?: boolean,
   marginTop?: string,
   fontWeight?: string
-}; 
+};
 
 interface IBasicText extends ITextProps {
   text: string
