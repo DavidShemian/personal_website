@@ -1,11 +1,9 @@
-import React, { Component, ReactNode } from 'react';
+import React, { ReactNode, useState } from 'react';
 import styled, { keyframes, css } from 'styled-components';
 import { MAIN_WHITE, GREY_SHADE, BLACK } from '../constants/Colors';
 import DownloadResume from '../constants/DownloadResume';
 import StyledSpan from './StyledSpan';
 import NavBarLink from './NavBarLink';
-
-interface IProps { }
 
 interface ISpacedNavBarLink {
     to: string,
@@ -20,16 +18,11 @@ interface IShowX {
     showX: boolean | undefined
 }
 
-class MobileMenu extends Component<IProps, IShowX>{
-    state = {
-        showX: false
-    };
+const MobileMenu = () => {
+    const [showX, toggleX] = useState(false);
 
-    showHideX = async () => {
-        const { showX } = this.state;
-        await this.setState({
-            showX: !showX
-        });
+    const showHideX = async () => {
+        toggleX(!showX);
         if (!showX) {
             document.body.style.overflow = "hidden"
             document.body.style.position = "relative"
@@ -39,54 +32,50 @@ class MobileMenu extends Component<IProps, IShowX>{
         }
     }
 
-    SpacedNavBarLink = ({ to, label }: ISpacedNavBarLink) => {
+
+    const SpacedNavBarLink = ({ to, label }: ISpacedNavBarLink) => {
         return (
-            <this.SpacedSpan>
-                <NavBarLink to={to} label={label} onClick={this.showHideX} />
-            </this.SpacedSpan>
+            <SpacedSpan>
+                <NavBarLink to={to} label={label} onClick={showHideX} />
+            </SpacedSpan>
         );
     };
 
-    SpacedNavBarDownload = ({ download }: IReactNode) => {
+    const SpacedNavBarDownload = ({ download }: IReactNode) => {
         return (
-            <this.SpacedSpan>
+            <SpacedSpan>
                 {download}
-            </this.SpacedSpan>
+            </SpacedSpan>
         )
     }
 
-    SpacedSpan = ({ children }: IReactNode) => {
+    const SpacedSpan = ({ children }: IReactNode) => {
         return (
-            <StyledSpan margin={'4vh 0 0 0'}>
+            <StyledSpan margin={'3vh 0 0 0'}>
                 {children}
             </StyledSpan>
         )
     }
 
-    render() {
-        const { showX } = this.state;
-
-        return (
-            <MenuContainer>
-                <MenuButtonContainer onClick={this.showHideX}>
-                    <Bar1 showX={showX} />
-                    <Bar2 showX={showX} />
-                    <Bar3 showX={showX} />
-                </MenuButtonContainer>
-                <Container showX={showX}>
-                    <this.SpacedNavBarLink to="Welcome" label={'Welcome'} />
-                    <this.SpacedNavBarLink to="PastWork" label={'Experience'} />
-                    <this.SpacedNavBarLink to="Abilities" label={'Abilities'} />
-                    <this.SpacedNavBarLink to="AboutMySelf" label={'About me'} />
-                    <this.SpacedNavBarLink to="ContactInfo" label={'Contact me'} />
-                    <this.SpacedNavBarDownload download={<DownloadResume />} />
-                </Container>
-                <ShadeDiv showX={showX} />
-            </MenuContainer>
-        )
-    }
+    return (
+        <MenuContainer>
+            <MenuButtonContainer onClick={showHideX}>
+                <Bar1 showX={showX} />
+                <Bar2 showX={showX} />
+                <Bar3 showX={showX} />
+            </MenuButtonContainer>
+            <Container showX={showX}>
+                <SpacedNavBarLink to="Welcome" label={'Welcome'} />
+                <SpacedNavBarLink to="PastWork" label={'Experience'} />
+                <SpacedNavBarLink to="Abilities" label={'Abilities'} />
+                <SpacedNavBarLink to="AboutMySelf" label={'About me'} />
+                <SpacedNavBarLink to="ContactInfo" label={'Contact me'} />
+                <SpacedNavBarDownload download={<DownloadResume />} />
+            </Container>
+            <ShadeDiv showX={showX} />
+        </MenuContainer>
+    )
 }
-
 
 const ShadeDiv = styled.div<IShowX>`
   position: fixed;
@@ -99,7 +88,6 @@ const ShadeDiv = styled.div<IShowX>`
   bottom: 0;
   background-color: rgba(0,0,0,0.5);
   z-index: 2;
-  cursor: pointer;
 `;
 
 const ANIMATION_TIME = '0.7s';
