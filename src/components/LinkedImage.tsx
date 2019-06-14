@@ -4,8 +4,8 @@ import Logo from './Logo';
 
 interface ILinkedImage {
     href: string,
-    width: string,
-    height: string,
+    width?: string,
+    height?: string,
     src: string
 }
 

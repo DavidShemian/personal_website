@@ -46,4 +46,4 @@ This is way I keep myself knowledge in the latests trends and technologies out t
 
 export const EMAIL: string = `davidshemian18@gmail.com`
 
-export const PHONE_NUMBER: string = `+972543151790`
+export const PHONE_NUMBER: string = `+972543151790`;
