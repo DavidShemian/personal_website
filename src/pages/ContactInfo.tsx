@@ -15,7 +15,7 @@ const ContactInfo = () => (
             <BasicText text={PHONE_NUMBER} />
             <BasicText text={EMAIL} />
             </CenteredContainer>
-        <LinkedImage href={LINKEDIN_PROFILE} src={LINKEDIN_LOGO} width={'8vh'} height={'8vh'} />
+        <LinkedImage href={LINKEDIN_PROFILE} src={LINKEDIN_LOGO} width={'30px'} height={'30px'} />
     </CenteredContainer>
 );
 

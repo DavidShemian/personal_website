@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import Logo from '../components/Logo';
 import BasicText from '../components/BasicText';
 import { SECONDARY_WHITE, MAROON } from '../constants/Colors';
-import { JAVA_SCRIPT_DESCRIPTION, NODE_JS_DESCRIPTION, REACT_DESCRIPTION } from '../constants/Texts';
+import { JAVASCRIPT_DESCRIPTION, NODE_JS_DESCRIPTION, REACT_DESCRIPTION, CSHARP_DESCRIPTION, SQL_DESCRIPTION } from '../constants/Texts';
 import TextContainer from '../components/TextContainer';
 
 
@@ -13,16 +13,21 @@ const Abilities = () => (
         <BasicText text={'What I know to do'} isTitle={true} />
         <LogoContainer>
             <Logo src={'https://i.ibb.co/9WQxxN1/javascript.png'} />
+            <Logo src={'https://i.ibb.co/qjHzdpd/ts.png'} />
             <Logo src={'https://i.ibb.co/SmdyWTZ/node.png'} />
             <Logo src={'https://i.ibb.co/GMydpKZ/react.png'} />
             <Logo src={'https://i.ibb.co/prHTgVJ/java.png'} />
             <Logo src={'https://i.ibb.co/CHjBdvS/C.png'} />
             <Logo src={'https://i.ibb.co/yy0wYHF/HTML5.png'} />
             <Logo src={'https://i.ibb.co/QnbqdsR/CSS.png'} />
+            <Logo src={'https://i.ibb.co/pw0XBTK/sql.png'} />
         </LogoContainer>
-        <AbilityDescription coloredText='Javascript - ' text={JAVA_SCRIPT_DESCRIPTION} />
+        <AbilityDescription coloredText='Javascript - ' text={JAVASCRIPT_DESCRIPTION} />
         <AbilityDescription coloredText='Node js - ' text={NODE_JS_DESCRIPTION} />
         <AbilityDescription coloredText='React - ' text={REACT_DESCRIPTION} />
+        <AbilityDescription coloredText='C# / Java - ' text={CSHARP_DESCRIPTION} />
+        <AbilityDescription coloredText='C# / Java - ' text={CSHARP_DESCRIPTION} />
+        <AbilityDescription coloredText='SQL - ' text={SQL_DESCRIPTION} />
     </CenteredContainer>
 );
 

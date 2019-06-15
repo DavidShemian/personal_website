@@ -27,7 +27,7 @@ const Card = ({ src, name, title, dates, text }: CardProps) => {
 const SquaredImage = styled.img`
     object-fit: cover;  
     width: 300px;
-    height: 220px;
+    height: 250px;
     border-radius: 30px;
 `;
 
