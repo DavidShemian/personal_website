@@ -1,8 +1,10 @@
 import styled from 'styled-components';
+import { MAIN_WHITE } from '../constants/Colors';
 
 interface ICenteredContainer {
     backgroundColor?: string,
-    marginTop?: string
+    marginTop?: string,
+    marginBottom?: string,
 }
 
 
@@ -11,12 +13,12 @@ const CenteredContainer = styled.div<ICenteredContainer>`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: ${props => props.backgroundColor ? props.backgroundColor : '#FFFFF'};
+    background-color: ${props => props.backgroundColor ? props.backgroundColor : MAIN_WHITE};
     width: 100%;
     min-width: 300px;
     overflow: hidden;
-    margin-bottom: 2vh;
     margin-top: ${props => props.marginTop};
+    margin-bottom: ${props => props.marginBottom};
 `;
 
 

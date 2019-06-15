@@ -9,11 +9,12 @@ interface CardProps {
     name: string,
     title: string,
     dates: string,
-    text: string
+    text: string,
+    marginBottom?: string
 }
 
-const Card = ({ src, name, title, dates, text }: CardProps) => {
-    return (<Container>
+const Card = ({ src, name, title, dates, text, marginBottom }: CardProps) => {
+    return (<Container marginBottom={marginBottom}>
         <SquaredImage src={src} />
         <TextContainer>
             <BasicText text={name} color={MAROON} fontWeight={'bold'} />
@@ -49,6 +50,7 @@ const Container = styled(CenteredContainer)`
         min-width: 300px;
         width: 60vw; 
         margin-top: 6vh;
+        margin-bottom: ${props => props.marginBottom};
         @media screen and (max-width: 1000px){
             flex-direction: column;
         }

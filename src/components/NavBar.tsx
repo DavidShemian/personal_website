@@ -13,10 +13,8 @@ export default class Navbar extends Component {
           <NavBarLink to="Abilities" label={'Abilities'} />
           <NavBarLink to="AboutMySelf" label={'About me'} />
           <NavBarLink to="ContactInfo" label={'Contact me'} />
-        </NavContent>
-        <DownloadResumeDiv>
           <DownloadResume />
-        </DownloadResumeDiv>
+        </NavContent>
       </NavContainer>
     );
   }
@@ -46,8 +44,4 @@ const NavContent = styled.div`
   flex-grow: 0.2;
   margin: auto;
   margin-left: 20%;
-`;
-
-const DownloadResumeDiv = styled.div`
-  margin: auto;
 `;

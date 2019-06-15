@@ -2,12 +2,12 @@ import React from 'react';
 import CenteredContainer from '../components/CenteredContainer';
 import Card from '../components/Card';
 import { SMALL_RUMBLE_DESCRIPTION, IDC_DESCRIPTION } from '../constants/Texts';
-import BasicText from '../components/BasicText';
-
+import ParagraphTitle from '../components/ParagraphTitle';
+import { LAST_ELEMENT_IN_PARAGRAPH_MARGIN } from '../constants/Sizes';
 
 const PastWork = () => (
     <CenteredContainer id={'PastWork'}>
-        <BasicText text={`What I've been up to`} isTitle />
+        <ParagraphTitle text={`What I've been up to`} isTitle />
         <Card
             src='http://www.mnews.co.il/upload/1503476102.png'
             name='Rumble'
@@ -20,7 +20,8 @@ const PastWork = () => (
             name='IDC'
             title='Computer science student'
             dates='01.11.2017 - 01.09.2019'
-            text={IDC_DESCRIPTION}
+            text={IDC_DESCRIPTION} 
+            marginBottom={LAST_ELEMENT_IN_PARAGRAPH_MARGIN}
         />
     </CenteredContainer>
 );
