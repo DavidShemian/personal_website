@@ -95,7 +95,7 @@ const ANIMATION_TIME = '0.7s';
 const MenuContainer = styled.div`
     position: absolute; 
     top: 0px;
-    @media (min-width: 700px) {
+    @media (min-width: 815px) {
     display: none;
     }
 `;

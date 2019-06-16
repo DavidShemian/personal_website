@@ -30,7 +30,7 @@ const NavContainer = styled.nav`
   flex-shrink: 0;
   z-index:100;
   overflow: hidden;
-  @media (max-width: 700px) {
+  @media (max-width: 815px) {
   display: none;
   }
 `;

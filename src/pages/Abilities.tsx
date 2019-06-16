@@ -52,10 +52,6 @@ const LogoContainer = styled.div`
     margin-left: 3vw;
     margin-right: 3vw;
     margin-top: 2vh;
-    @media (max-width: 400px) {
-    overflow-x: scroll;
-  }
-
 `;
 
 export default Abilities;
