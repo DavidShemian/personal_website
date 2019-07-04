@@ -6,3 +6,4 @@ export const TEAL: string = '#39CCCC';
 export const MENU_BACKGROUND: string = '#898E8C';
 export const BLACK: string = '#000000';
 export const GREY_SHADE: string = '#939393';
+export const LINK_BLUE: string = '#0074D9';

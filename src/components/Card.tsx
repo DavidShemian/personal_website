@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import CenteredContainer from './CenteredContainer';
 import BasicText from './BasicText';
-import { MAROON, OLIVE, TEAL } from '../constants/Colors';
+import { MAROON, OLIVE, TEAL, LINK_BLUE } from '../constants/Colors';
 
 interface CardProps {
     src: string,
@@ -10,16 +10,23 @@ interface CardProps {
     title: string,
     dates: string,
     text: string,
+    linkText?: string,
+    link?: string,
     marginBottom?: string
 }
 
-const Card = ({ src, name, title, dates, text, marginBottom }: CardProps) => {
+const Card = ({ src, name, title, dates, text, marginBottom, linkText = '', link }: CardProps) => {
     return (<Container marginBottom={marginBottom}>
         <SquaredImage src={src} />
         <TextContainer>
             <BasicText text={name} color={MAROON} fontWeight={'bold'} />
             <BasicText text={title} color={OLIVE} fontWeight={'bold'} />
             <BasicText text={dates} color={TEAL} fontWeight={'bold'} />
+            {link ?
+                <Link href={link} target="_blank">
+                    <BasicText text={linkText} color={LINK_BLUE} fontWeight={'bold'} />
+                </Link>
+                : null}
             <BasicText text={text} isP />
         </TextContainer>
     </Container>)
@@ -30,6 +37,10 @@ const SquaredImage = styled.img`
     width: 300px;
     height: 250px;
     border-radius: 30px;
+`;
+
+const Link = styled.a`
+    text-decoration: none;
 `;
 
 const TextContainer = styled.div`

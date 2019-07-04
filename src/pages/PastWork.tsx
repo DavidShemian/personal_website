@@ -4,6 +4,7 @@ import Card from '../components/Card';
 import { SMALL_RUMBLE_DESCRIPTION, IDC_DESCRIPTION } from '../constants/Texts';
 import ParagraphTitle from '../components/ParagraphTitle';
 import { LAST_ELEMENT_IN_PARAGRAPH_MARGIN } from '../constants/Sizes';
+import RumbleRecommendationLetter from '../constants/RumbleRecommendationLetter'
 
 const PastWork = () => (
     <CenteredContainer id={'PastWork'}>
@@ -13,6 +14,8 @@ const PastWork = () => (
             name='Rumble'
             title='Fullstack engineer'
             dates='March 2018 - present'
+            link={RumbleRecommendationLetter}
+            linkText='View recommendation letter '
             text={SMALL_RUMBLE_DESCRIPTION}
         />
         <Card
