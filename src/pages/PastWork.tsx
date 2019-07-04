@@ -13,7 +13,7 @@ const PastWork = () => (
             src='http://www.mnews.co.il/upload/1503476102.png'
             name='Rumble'
             title='Fullstack engineer'
-            dates='March 2018 - present'
+            dates='March 2018 - July 2019'
             link={RumbleRecommendationLetter}
             linkText='View recommendation letter '
             text={SMALL_RUMBLE_DESCRIPTION}
