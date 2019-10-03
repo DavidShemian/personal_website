@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import Logo from '../components/Logo';
 import BasicText from '../components/BasicText';
 import { SECONDARY_WHITE, MAROON } from '../constants/Colors';
-import { JAVASCRIPT_DESCRIPTION, NODE_JS_DESCRIPTION, REACT_DESCRIPTION, CSHARP_DESCRIPTION, SQL_DESCRIPTION } from '../constants/Texts';
+import { JAVASCRIPT_DESCRIPTION, NODE_JS_DESCRIPTION, REACT_DESCRIPTION, CSHARP_DESCRIPTION, SQL_DESCRIPTION, ANGULAR_DESCRIPTION } from '../constants/Texts';
 import TextContainer from '../components/TextContainer';
 import ParagraphTitle from '../components/ParagraphTitle';
 
@@ -17,17 +17,19 @@ const Abilities = () => (
             <Logo src={'https://i.ibb.co/qjHzdpd/ts.png'} />
             <Logo src={'https://i.ibb.co/SmdyWTZ/node.png'} />
             <Logo src={'https://i.ibb.co/GMydpKZ/react.png'} />
+            <Logo src={'https://i.ibb.co/hVn0WJh/Angular-full-color-logo-svg.png'} />
+            <Logo src={'https://i.ibb.co/pw0XBTK/sql.png'} />
             <Logo src={'https://i.ibb.co/prHTgVJ/java.png'} />
             <Logo src={'https://i.ibb.co/CHjBdvS/C.png'} />
             <Logo src={'https://i.ibb.co/yy0wYHF/HTML5.png'} />
             <Logo src={'https://i.ibb.co/QnbqdsR/CSS.png'} />
-            <Logo src={'https://i.ibb.co/pw0XBTK/sql.png'} />
         </LogoContainer>
         <AbilityDescription coloredText='Javascript - ' text={JAVASCRIPT_DESCRIPTION} />
         <AbilityDescription coloredText='Node js - ' text={NODE_JS_DESCRIPTION} />
         <AbilityDescription coloredText='React - ' text={REACT_DESCRIPTION} />
-        <AbilityDescription coloredText='C# / Java - ' text={CSHARP_DESCRIPTION} />
+        <AbilityDescription coloredText='Angular - ' text={ANGULAR_DESCRIPTION} />
         <AbilityDescription coloredText='SQL - ' text={SQL_DESCRIPTION} marginBottom={'20px'} />
+        <AbilityDescription coloredText='C# / Java - ' text={CSHARP_DESCRIPTION} />
     </CenteredContainer>
 );
 

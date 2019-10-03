@@ -6,6 +6,11 @@ My responsibilities varied from creating and maintaining an online tool that mak
   When I started working at Rumble, as a second year student, I had to learn React and create an external tool in just 3 months of part time job,  all by myself.
   I feel that this improved my ability to learn new things in an efficient, quick way.`
 
+  export const XPERITI_DESCRIPTION: string = `Xperiti is an AI-powered enterprise software designed to give 
+  investment management firms a strategic advantage in research.
+  As the second developer recruited to Xperiti, I had many responsibilities regarding the infrastructure of the system, including building the database, log system and much more.
+  In Xperiti we work using Node JS and Typescript for the backend, and Angular for the front end.`
+
 export const IDC_DESCRIPTION: string = `While studying at IDC I got the chance to learn many things about myself and about the world.
 I learned that I love studying that there are amazing people out there to learn so much from.
 The main thing that I learned is that no matter what obstacle I'm facing, with the right amount of dedication and hard work I can overcome it. 
@@ -25,6 +30,8 @@ maintained and expanded React Native app and created this website 😃
 I am familiar and practiced with updated topics such as hooks and context, best practices \
 and design patterns. Worked with major packages such as Mobx, react-router and many others. 
 As of React being such a fast pacing technology, I make sure that I'm always aware of the new things added to it.`
+
+export const ANGULAR_DESCRIPTION: string = `I work and maintain a full fledge Angular app using Angular`
 
 export const CSHARP_DESCRIPTION: string = `Highly knowledgeable in OOP languages such as C# and JAVA, including best practices
 and design patterns. I took a special one year course dedicated only to OOP, which helped me understand the power and abilities of strongly typed languages.
