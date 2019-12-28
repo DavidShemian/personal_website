@@ -4,10 +4,17 @@ import styled from 'styled-components';
 import Logo from '../components/Logo';
 import BasicText from '../components/BasicText';
 import { SECONDARY_WHITE, MAROON } from '../constants/Colors';
-import { JAVASCRIPT_DESCRIPTION, NODE_JS_DESCRIPTION, REACT_DESCRIPTION, CSHARP_DESCRIPTION, SQL_DESCRIPTION, ANGULAR_DESCRIPTION } from '../constants/Texts';
+import {
+    JAVASCRIPT_DESCRIPTION,
+    NODE_JS_DESCRIPTION,
+    REACT_DESCRIPTION,
+    CSHARP_DESCRIPTION,
+    SQL_DESCRIPTION,
+    ANGULAR_DESCRIPTION,
+    TYPESCRIPT_DESCRIPTION
+} from '../constants/Texts';
 import TextContainer from '../components/TextContainer';
 import ParagraphTitle from '../components/ParagraphTitle';
-
 
 const Abilities = () => (
     <CenteredContainer id={'Abilities'} backgroundColor={SECONDARY_WHITE}>
@@ -24,32 +31,33 @@ const Abilities = () => (
             <Logo src={'https://i.ibb.co/yy0wYHF/HTML5.png'} />
             <Logo src={'https://i.ibb.co/QnbqdsR/CSS.png'} />
         </LogoContainer>
-        <AbilityDescription coloredText='Javascript - ' text={JAVASCRIPT_DESCRIPTION} />
-        <AbilityDescription coloredText='Node js - ' text={NODE_JS_DESCRIPTION} />
-        <AbilityDescription coloredText='React - ' text={REACT_DESCRIPTION} />
-        <AbilityDescription coloredText='Angular - ' text={ANGULAR_DESCRIPTION} />
-        <AbilityDescription coloredText='SQL - ' text={SQL_DESCRIPTION} marginBottom={'20px'} />
-        <AbilityDescription coloredText='C# / Java - ' text={CSHARP_DESCRIPTION} />
+        <AbilityDescription coloredText="Javascript - " text={JAVASCRIPT_DESCRIPTION} />
+        <AbilityDescription coloredText="Typescript - " text={TYPESCRIPT_DESCRIPTION} />
+        <AbilityDescription coloredText="Node js - " text={NODE_JS_DESCRIPTION} />
+        <AbilityDescription coloredText="React - " text={REACT_DESCRIPTION} />
+        <AbilityDescription coloredText="Angular - " text={ANGULAR_DESCRIPTION} />
+        <AbilityDescription coloredText="SQL - " text={SQL_DESCRIPTION} marginBottom={'20px'} />
+        <AbilityDescription coloredText="C# / Java - " text={CSHARP_DESCRIPTION} />
     </CenteredContainer>
 );
 
 interface IAbilityDescription {
-    coloredText: string,
-    text: string,
-    marginBottom?: string
+    coloredText: string;
+    text: string;
+    marginBottom?: string;
 }
 
 const AbilityDescription = ({ coloredText, text, marginBottom = 'none' }: IAbilityDescription) => (
-    (<TextContainer marginBottom={marginBottom}>
-        <BasicText text={coloredText} color={MAROON} fontWeight={"bold"} isP />
+    <TextContainer marginBottom={marginBottom}>
+        <BasicText text={coloredText} color={MAROON} fontWeight={'bold'} isP />
         <BasicText text={text} isP />
-    </TextContainer>)
+    </TextContainer>
 );
 
 const LogoContainer = styled.div`
     display: flex;
     justify-content: flex-start;
-    align-items:flex-start;
+    align-items: flex-start;
     overflow-x: auto;
     margin-left: 3vw;
     margin-right: 3vw;
